@@ -1,5 +1,6 @@
 
-<img width="768" height="1383" alt="unnamed" src="https://github.com/user-attachments/assets/8f2f00e4-9be2-41ba-9794-d04ee2629e87" />
+<img width="768" height="1291" alt="unnamed" src="https://github.com/user-attachments/assets/296c2f68-b4b5-46d5-a089-d274e66615ec" />
+
 
 # 📱 Meu Projetinho Kotlin
 
