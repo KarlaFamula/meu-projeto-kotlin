@@ -20,6 +20,8 @@ Aplicativo desenvolvido no **Android Studio utilizando Kotlin** como parte dos e
 Projeto desenvolvido para prática de desenvolvimento mobile durante a graduação em **Sistemas de Informação na FIAP**.
 
 
+
+
 **Karla Famula**
 
 - GitHub: https://github.com/KarlaFamula
