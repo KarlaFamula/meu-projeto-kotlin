@@ -9,28 +9,58 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+// Tela de Perfil — recebe nome e idade como parâmetros OBRIGATÓRIOS na URL
+// Formato da rota: perfil/{nome}/{idade}
 @Composable
-fun PerfilScreen(navController: NavController, nome: String, idade: Int) {
+fun PerfilScreen(modifier: Modifier = Modifier, navController: NavController, nome: String, idade: Int) {
 
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(Color(0xFF4CAF50))  // cor de fundo verde da tela de perfil
+            .padding(32.dp)
     ) {
 
-        Text("Perfil")
+        // Título "PERFIL" exibido no canto superior esquerdo
+        Text(
+            text = "PERFIL",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.White
+        )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        // Column centralizada exibindo nome e idade do usuário
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .align(Alignment.Center)
+        ) {
+            Text(
+                text = "Nome: $nome",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
 
-        Text("Nome: $nome")
-        Text("Idade: $idade")
+            Text(
+                text = "Idade: $idade anos",
+                fontSize = 18.sp,
+                color = Color.White
+            )
+        }
 
-        Spacer(modifier = Modifier.height(20.dp))
-
-        Button(onClick = {
-            navController.popBackStack()
-        }) {
-            Text("Voltar")
+        // Botão "Voltar" — retorna para a tela de Menu
+        Button(
+            onClick = { navController.navigate("menu") },
+            colors = ButtonDefaults.buttonColors(Color.White),
+            modifier = Modifier.align(Alignment.BottomCenter)
+        ) {
+            Text(
+                text = "Voltar",
+                fontSize = 20.sp,
+                color = Color.Blue
+            )
         }
     }
 }
+

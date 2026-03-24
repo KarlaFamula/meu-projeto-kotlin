@@ -8,25 +8,39 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+// @Composable indica que esta função é uma tela/componente do Jetpack Compose
+// modifier: permite que o chamador ajuste o layout externamente (padding, tamanho, etc.)
+// navController: responsável por navegar entre as telas do app
 @Composable
-fun LoginScreen(navController: NavController) {
+fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
 
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+    // Box é um contêiner que empilha elementos — os filhos podem ser posicionados com Alignment
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(Color(0xFFED145B))
+            .padding(32.dp)
     ) {
 
-        Text(text = "Tela de Login")
+        // Texto "LOGIN" exibido no canto superior esquerdo (posição padrão do Box)
+        Text(
+            text = "LOGIN",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.White
+        )
 
-        Spacer(modifier = Modifier.height(20.dp))
-
+        // Botão centralizado na tela que leva o usuário para a tela de Menu
         Button(
-            onClick = {
-                navController.navigate("menu")
-            }
+            onClick = { navController.navigate("menu") }, // navega para a rota "menu" ao clicar
+            colors = ButtonDefaults.buttonColors(Color.White),
+            modifier = Modifier.align(Alignment.Center)
         ) {
-            Text("ENTRAR")
+            Text(
+                text = "ENTRAR",
+                fontSize = 20.sp,
+                color = Color.Blue
+            )
         }
     }
 }
