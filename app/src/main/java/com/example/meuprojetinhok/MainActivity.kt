@@ -1,5 +1,24 @@
 package com.example.meuprojetinhok
 
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.example.meuprojetinhok.screens.LoginScreen
+import com.example.meuprojetinhok.screens.MenuScreen
+import com.example.meuprojetinhok.screens.PedidosScreen
+import com.example.meuprojetinhok.screens.PerfilScreen
+import com.example.meuprojetinhok.ui.theme.MeuProjetinhoKTheme
+
 // MainActivity é o ponto de entrada do app — a primeira Activity que o Android abre
 class MainActivity : ComponentActivity() {
 
@@ -11,9 +30,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
-
-
-            CP01_KotlinTheme {
+            MeuProjetinhoKTheme {
 
                 // Scaffold fornece a estrutura básica de layout do Material Design
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
